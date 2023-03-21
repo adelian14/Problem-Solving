@@ -27,22 +27,22 @@ int main()
         }
         int l = 1, r = n;
         while(l < r){
-            int m = (l+r+1)/2;
-            cout << "? " << r-m+1 << " ";
-            for(int i = m; i <= r; i++){
+            int m = (l+r)/2;
+            cout << "? " << m-l+1 << " ";
+            for(int i = l; i <= m; i++){
                 cout << i << " ";
             }
             cout << endl;
             cout.flush();
             cin >> x;
-            if(x==p[r]-p[m-1]){
-                r=m-1;
+            if(x==p[m]-p[l-1]){
+                l=m+1;
             }
             else{
-                l=m;
+                r=m;
             }
         }
-        cout << "! " << r << endl;
+        cout << "! " << l << endl;
         cout.flush();
     }
     return 0;
